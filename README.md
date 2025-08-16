@@ -12,7 +12,7 @@ Seu objetivo é fornecer endpoints organizados para manipular conteúdo dinâmic
 
 ---
 
-## 🚀 Tecnologias Utilizadas  
+## 🚀 Tecnologias Utilizadas
 
 - ⚡ [Node.js](https://nodejs.org/) – Ambiente de execução  
 - 🌐 [Express](https://expressjs.com/) – Framework para APIs  
