@@ -29,22 +29,12 @@ const ServicoController = {
         const ServicoSalvo = await servicoRepository.save(novoServico);
         return res.status(201).json({
             mensagem: "Serviço registrado com sucesso",
-            data: servicoContext
+            data: servicoSalvo
         })
     },
-    listar: (req, res) => {
+    listar: async (req, res) => {
+        const Servico = await servicoRepository.find();
         return res.status(200).json(Servico);
-    },
-    perfil: async (req, res) => {
-        const servicoAuthId = req.servicoId;
-        const servico = await servicoRepository.findOneBy({id: servicoAuthId});
-        if(!servico) {
-            return res.status(404).json(
-                { erro: 'Serviço nao encontrado'})
-        }
-        const { senha: _, ...perfilData} = usuario;
-       
-        return res.status(200).json(perfilData);
     }
 }
  
